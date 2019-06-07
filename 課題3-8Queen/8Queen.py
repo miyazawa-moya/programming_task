@@ -13,8 +13,7 @@ def main():
     screen = pygame.display.set_mode((520,520)) #画面幅
     clock = pygame.time.Clock()
     
-    font_type = pygame.font.Font(None,10)
-    font1 = font_type.render("Q",True,(0,0,0))
+    font_type = pygame.font.Font(None,32)
 
     endflg = False
     
@@ -37,11 +36,34 @@ def main():
                 
                 if (mouse_x > 0 and mouse_x < TileWidth) and (mouse_y > 0 and mouse_y < TileHeight) : 
                     #マウスダウンがタイル内の時
-                    print(mouse_x // 40)
-                    print(mouse_y // 40)
-                    #screen.blit(font1,450,450)
-                    pygame.draw.rect(screen,(255,0,0),(100 + (mouse_x // 40 * 40),100 + (mouse_y // 40 * 40),TileSize + 1,TileSize +1))
-                    
+                    tile_pointX = mouse_x // 40 #クリックしたタイルの指標配置X
+                    tile_pointY = mouse_y // 40 #クリックしたタイルの指標配置Y
+                    print(tile_pointX)
+                    print(tile_pointY)
+                    font1 = font_type.render("Q",True,(0,0,0))
+                    screen.blit(font1,(112 + (tile_pointX * 40),112 + (tile_pointY * 40)))
+                    for square in range(TileNum):
+                        pygame.draw.rect(screen,(255,0,0),(100 + square * 40 , 100 + tile_pointY * 40,TileSize + 1,TileSize +1))
+                        pygame.draw.rect(screen,(255,0,0),(100 + tile_pointX * 40 , 100 + square * 40, TileSize + 1,TileSize +1))
+                        
+                    ####  斜めのプログラムが汚いので綺麗にしたい　####
+                    count = 1
+                    while(tile_pointX + count < 8 and tile_pointY + count < 8):
+                        pygame.draw.rect(screen,(255,0,0),(100 + (tile_pointX + count) * 40   , 100 + (tile_pointY + count) * 40 ,TileSize + 1,TileSize +1))
+                        count+=1
+                    count = -1
+                    while(tile_pointX + count >= 0 and tile_pointY + count >= 0):
+                        pygame.draw.rect(screen,(255,0,0),(100 + (tile_pointX + count) * 40   , 100 + (tile_pointY + count) * 40 ,TileSize + 1,TileSize +1))
+                        count-=1
+                    count = -1
+                    while(tile_pointX + count >= 0 and tile_pointY - count < 8):
+                        pygame.draw.rect(screen,(255,0,0),(100 + (tile_pointX + count) * 40   , 100 + (tile_pointY - count) * 40 ,TileSize + 1,TileSize +1))
+                        count-=1
+                    count = -1
+                    while(tile_pointX - count < 8 and tile_pointY + count >= 0):
+                        pygame.draw.rect(screen,(255,0,0),(100 + (tile_pointX - count) * 40   , 100 + (tile_pointY + count) * 40 ,TileSize + 1,TileSize +1))
+                        count-=1
+                    ####  斜めのプログラムが汚いので綺麗にしたい　####
             
         clock.tick(framerate)
     
