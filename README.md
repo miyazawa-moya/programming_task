@@ -14,7 +14,7 @@ Google Chromeで動作推奨です。
 -js  
 　--poker.js  
 -css  
-　--style.css
+　--style.css  
 -img  
 　--画像  
 -poker.html  
