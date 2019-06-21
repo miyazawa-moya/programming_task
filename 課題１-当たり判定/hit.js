@@ -53,10 +53,10 @@ var main =function main(){
     //ここから初期設定
 
     //自機データを入力
-    hero_main = new hero(100,100,70,100,1);
+    hero_main = new hero(120,100,70,100,1);
     //敵機データ入力
     enemy_data[0]= new enemy(50,60,100,50,1);
-    enemy_data[1]= new enemy(-10,120,100,50,2);
+    enemy_data[1]= new enemy(10,120,100,50,2);
     enemy_data[2]= new enemy(165,115,70,70,3);
     
     //自機と敵機を描画
