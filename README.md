@@ -12,11 +12,11 @@ Google Chromeで動作推奨です。
 ポーカーのプログラムです。  
 課題２-ポーカーの役判定  
 -js  
- --poker.js  
+　--poker.js  
 -css  
- --style.css
+　--style.css
 -img  
-  --画像  
+　--画像  
 -poker.html  
 Google Chromeで動作推奨です。  
   
@@ -24,7 +24,7 @@ Google Chromeで動作推奨です。
 8Queenゲームのプログラムです。  
 課題３-8Queen  
 -sound  
- --音楽  
+　--音楽  
 8Queen.py  
 pygameライブラリを使用しています。実行する際はpygameをインストールしてください。
   
