@@ -23,3 +23,13 @@ hero_main.xdata < enemy_data[i].wdata && enemy_data[i].xdata < hero_main.wdata
 ### 出力データ  
 オブジェクトの番号データを元にconsole.logで出力  
 console.log(enemy_data[i].type + "が当たり");  
+  
+  
+  
+  
+課題２-ポーカーの役判定
+====
+## 考え方  
+### 入力データ  
+カード自身のクラスを用意。  
+フィールドは現在カードが渡っているかを表すuse,カードの数字を表すnumber,スートを表すsymbolを準備
